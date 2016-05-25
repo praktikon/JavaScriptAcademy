@@ -3,9 +3,9 @@ function Animal(age, name, sound, region){
 	this.name = name;
 	this.sound = sound;
 	this.region = region;
-	this.say = function() {
+}
+Animal.prototype.say = function() {
 		console.log(this.sound);
-	}
 }
 anml = new Animal(5, 'anny', 'moo', 'region0');
 
