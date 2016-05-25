@@ -13,24 +13,37 @@ var Animal = {
 anml = Object.create(Animal).constructor(4, 'anny', 'moo', 'region0');
 
 var Dog = Object.create(Animal);
+Dog.constructor = function(age, name, region){
+  Animal.constructor.call(this, age, name, 'woof', region);
+  return this;
+}
 Dog.goAway = function() {
   console.log('Go away! ' + this.sound);
 };
-tusik = Object.create(Dog).constructor(2, 'tuz', 'woof', 'region1');
+tusik = Object.create(Dog).constructor(2, 'tuz', 'region1');
+
 
 
 var Cat = Object.create(Animal);
+Cat.constructor = function(age, name, region){
+  Animal.constructor.call(this, age, name, 'meaw', region);
+  return this;
+}
 Cat.goAway = function() {
 	console.log('Go away! ' + this.sound);
 };
-kitty = Object.create(Cat).constructor(3, 'matroskin', 'meaw', 'region2');
+kitty = Object.create(Cat).constructor(3, 'matroskin', 'region2');
 
 
 var Woodpecker = Object.create(Animal);
+Woodpecker.constructor = function(age, name, region){
+  Animal.constructor.call(this, age, name, 'tuk', region);
+  return this;
+}
 Woodpecker.goAway = function() {
 	console.log('Go away! ' + this.sound);
 };
-woody = Object.create(Woodpecker).constructor(3, 'dyatel', 'tuk', 'region3');
+woody = Object.create(Woodpecker).constructor(3, 'dyatel', 'region3');
 
 
 function getTypep(ob){
