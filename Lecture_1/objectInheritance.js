@@ -12,7 +12,6 @@ var Animal = {
 };
 anml = Object.create(Animal).constructor(4, 'anny', 'moo', 'region0');
 
-
 var Dog = Object.create(Animal);
 Dog.goAway = function() {
   console.log('Go away! ' + this.sound);
@@ -72,7 +71,6 @@ woody.say();
 kitty.goAway();
 tusik.goAway();
 woody.goAway();
-
 
 console.log(getTypep(anml));
 console.log(getTypep(tusik));
