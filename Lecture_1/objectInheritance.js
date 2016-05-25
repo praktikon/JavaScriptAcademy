@@ -78,11 +78,12 @@ function getTypepThis(){
 
 
 anml.say();
-kitty.say();
 tusik.say();
+kitty.say();
 woody.say();
-kitty.goAway();
+
 tusik.goAway();
+kitty.goAway();
 woody.goAway();
 
 console.log(getTypep(anml));
