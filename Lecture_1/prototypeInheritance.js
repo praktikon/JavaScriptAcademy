@@ -7,9 +7,12 @@ function Animal(age, name, sound, region){
 		console.log(this.sound);
 	}
 }
+<<<<<<< HEAD
 Animal.prototype.say = function() {
 		console.log(this.sound);
 }
+=======
+>>>>>>> abe73efaac318838bd1f6e7e24ace84b9ce1db67
 anml = new Animal(5, 'anny', 'moo', 'region0');
 
 
@@ -74,6 +77,11 @@ function getTypepThis(){
 }
 
 
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> abe73efaac318838bd1f6e7e24ace84b9ce1db67
 anml.say();
 tusik.say();
 kitty.say();
@@ -83,11 +91,19 @@ tusik.goAway();
 kitty.goAway();
 woody.goAway();
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> abe73efaac318838bd1f6e7e24ace84b9ce1db67
 console.log(getTypep(anml));
 console.log(getTypep(tusik));
 console.log(getTypep(kitty));
 console.log(getTypep(woody));
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> abe73efaac318838bd1f6e7e24ace84b9ce1db67
 console.log(getTypepThis.call(anml));
 console.log(getTypepThis.call(tusik));
 console.log(getTypepThis.call(kitty));
