@@ -10,32 +10,32 @@ Animal.prototype.say = function() {
 anml = new Animal(5, 'anny', 'moo', 'region0');
 
 
-var Dog = function(age, name, sound, region){
-	Animal.apply(this, arguments);
+var Dog = function(age, name, region){
+	Animal.call(this, age, name, 'woof', region);
 }
 Dog.prototype = new Animal();
 Dog.prototype.goAway = function(){
 	console.log('go away! ' + this.sound);
 }
-tusik = new Dog(2, 'tuz', 'woof', 'region1');
+tusik = new Dog(2, 'tuz', 'region1');
 
-var Cat = function(age, name, sound, region){
-	Animal.apply(this, arguments);
+var Cat = function(age, name, region){
+	Animal.call(this, age, name, 'meaw', region);
 }
 Cat.prototype = new Animal();
 Cat.prototype.goAway = function(){
 	console.log('go away! ' + this.sound);
 }
-kitty = new Cat(3, 'matroSkin', 'meaw', 'region2');
+kitty = new Cat(3, 'matroSkin','region2');
 
-var Woodpecker = function(age, name, sound, region){
-	Animal.apply(this, arguments);
+var Woodpecker = function(age, name, region){
+	Animal.call(this, age, name, 'tuk', region);
 }
 Woodpecker.prototype = new Animal();
 Woodpecker.prototype.goAway = function(){
 	console.log('go away! ' + this.sound);
 }
-woody = new Woodpecker(4, 'dyatel', 'tuk', 'region3');
+woody = new Woodpecker(4, 'dyatel', 'region3');
 
 
 function getTypep(ob){
