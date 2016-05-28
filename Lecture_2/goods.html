@@ -3,7 +3,7 @@
 <head>
     <meta charset=utf-8>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
-	<!--<script type="text/javascript" src="scripts/main.js"></script> -->
+	<script type="text/javascript" src="scripts/main.js"></script> 
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
 	<title>Goods List</title>
 </head>
@@ -14,9 +14,7 @@
 				<input id="goods-names-input" type="text" placeholder="Наименование товара" />
 			</div>
 			<ul class="goods-list">
-				<!-- <li><input type="checkbox"><span>cabbage</span></li>
-				<li><input type="checkbox"><span>lagedge</span></li>
-				<li><input type="checkbox"><span>water</span></li> -->
+				
 			</ul>
             <div class="delete-group">
                 <div class="check-all"><label><input type="checkbox">выбрать все записи<label></div>
@@ -26,114 +24,9 @@
 	</div>
 
 <script type="text/javascript">
-
-var ulItems = $('ul.goods-list');
-
-$("#goods-names-input").keypress(function(e) {
-	var val = $(this).val();
-	if(val!=''){
-    	if(e.which == 13) {
-    		ulItems.append('<li><input type="checkbox"><span>'+val+'</span><div class="cross"><img class="cross-img none" src="cross.png"></img><div></li>');
-        	$(this).val('');
-        	$("input:checkbox", ulItems).on("change",function(){
-				var input = $(this).next('span');
-     			console.log($(this).prop('checked'));
-     			if($(this).prop('checked')){
-     				$(input).addClass("black");
-     			} else {
-     				$(input).removeClass('black');
-     			};
-			});
-    	}
-	}
-});
-
-
-$(function () {
-    $(document).on('dblclick', 'span', function () {
-        var input = $('<input />', {
-        	'class': 'temp',
-            'type': 'text',
-            'value': $(this).html()
-        });
-        $(this).parent().find('span').addClass('none');
-        $(this).parent().append(input);
-        input.focus();
-    });
-
-    $(document).on('keyup','input.temp', function(evt) {
-        if(evt.which == 27){
-            if ($(this).parent().find('span').hasClass('none')){
-                $(this).parent().find('span').removeClass('none');
-                if($(this)){
-                 $(this).remove();
-               }
-            }
-        }
-    });
-
-    $(document).on('blur', 'input.temp', function () {
-        if ($(this).parent().find('span').hasClass('none')){
-            $(this).parent().find('span').removeClass('none');
-            if($(this)){
-     	     $(this).remove();
-    	   }
-        }
-    });
-
-});
-
-$(document).on('keypress', 'input.temp', function (e) {
-        if(e.which == 13) {
-            $(this).parent().find('span').removeClass('none').html($(this).val());
-            $(this).remove();
-        }
-    });
-
-
-$('input:checkbox', '.check-all').on('change', function(){
-    var checkboxState = $(this).prop('checked');
-    $('ul.goods-list').find(':checkbox').each(function(){
-        var input = $(this).next('span');
-        if (checkboxState){
-           $(this).prop('checked', true);
-           $(input).addClass("black");
-       }else {
-            $(this).prop('checked', false);
-            $(input).removeClass("black");
-       }
-    });
-});
-
-$(document).on('click', 'img.cross-img', function () {
-    $(this).closest('li').remove();
-});
-
-$(document).on('click', '.delete-button input:button', function () {
-    $('ul.goods-list').find(':checkbox').each(function(){
-        if($(this).prop('checked')) {
-            $(this).closest('li').remove();
-        }
-    });
-    if($('input:checkbox', '.check-all').prop('checked')){
-        $('input:checkbox', '.check-all').prop('checked', false);
-    }
-});
-
-
-$(document).on('mouseover', 'ul.goods-list li', function () {
-        $(this).find('img.cross-img').removeClass('none');
-    }).mouseout(function(){
-        $(this).find('img.cross-img').addClass('none');
-    });
- 
-
+    $(document).ready(
+    Application.init(document));
 </script>
-<!--
-	<script type="text/javascript">
-	$(document).ready(
-	Application.init(document));
-	</script>
--->
+
 </body>
 </html>
