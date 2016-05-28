@@ -11,7 +11,7 @@
 	<div class="container">
 		<div class="goods-list-container">
 			<div class="header">
-				<input id="goods-names-input" type="text" placeholder="enter here" />
+				<input id="goods-names-input" type="text" placeholder="Наименование товара" />
 			</div>
 			<ul class="goods-list">
 				<!-- <li><input type="checkbox"><span>cabbage</span></li>
@@ -19,8 +19,8 @@
 				<li><input type="checkbox"><span>water</span></li> -->
 			</ul>
             <div class="delete-group">
-                <div class="check-all"><input type="checkbox">выбрать все записи</div>
-                <div class="delete-button"><input type="button" value="Удалить все"></div>
+                <div class="check-all"><label><input type="checkbox">выбрать все записи<label></div>
+                <div class="delete-button"><input type="button" value="Удалить выбранные"></div>
             </div>   
 		</div>
 	</div>
@@ -33,7 +33,7 @@ $("#goods-names-input").keypress(function(e) {
 	var val = $(this).val();
 	if(val!=''){
     	if(e.which == 13) {
-    		ulItems.append('<li><input type="checkbox"><span>'+val+'</span><div class="cross"><img class="cross-img" src="cross.png"></img><div></li>');
+    		ulItems.append('<li><input type="checkbox"><span>'+val+'</span><div class="cross"><img class="cross-img none" src="cross.png"></img><div></li>');
         	$(this).val('');
         	$("input:checkbox", ulItems).on("change",function(){
 				var input = $(this).next('span');
@@ -91,22 +91,42 @@ $(document).on('keypress', 'input.temp', function (e) {
     });
 
 
-// $('input:checkbox', '.check-all').on('change', function(){
-//     var checkboxState = $(this).prop('checked');
-//     $('ul.goods-list').find(':checkbox').each(function(){
-//         var input = $(this).next('span');
-//         if (checkboxState){
-//            $(this).prop('checked', true);
-//            $(input).addClass("black");
-//        }else {
-//             $(this).prop('checked', false);
-//             $(input).removeClass("black");
-//        }
-//     });
-// });
+$('input:checkbox', '.check-all').on('change', function(){
+    var checkboxState = $(this).prop('checked');
+    $('ul.goods-list').find(':checkbox').each(function(){
+        var input = $(this).next('span');
+        if (checkboxState){
+           $(this).prop('checked', true);
+           $(input).addClass("black");
+       }else {
+            $(this).prop('checked', false);
+            $(input).removeClass("black");
+       }
+    });
+});
+
+$(document).on('click', 'img.cross-img', function () {
+    $(this).closest('li').remove();
+});
+
+$(document).on('click', '.delete-button input:button', function () {
+    $('ul.goods-list').find(':checkbox').each(function(){
+        if($(this).prop('checked')) {
+            $(this).closest('li').remove();
+        }
+    });
+    if($('input:checkbox', '.check-all').prop('checked')){
+        $('input:checkbox', '.check-all').prop('checked', false);
+    }
+});
 
 
-
+$(document).on('mouseover', 'ul.goods-list li', function () {
+        $(this).find('img.cross-img').removeClass('none');
+    }).mouseout(function(){
+        $(this).find('img.cross-img').addClass('none');
+    });
+ 
 
 </script>
 <!--
