@@ -97,10 +97,7 @@ $(function () {
 
         }
     });
-    
-
-
-
+ 
 // It worked GOOD!
 
     // $(document).on('blur', 'input.temp', function () {
@@ -110,12 +107,13 @@ $(function () {
     // });
 });
 
-    $('input.temp').keypress( function(e) {
+$(document).on('keypress', 'input.temp', function (e) {
+   // $('input.temp').keypress( function(e) {
         if(e.which == 13) {
-            console.log('33333333');
-            // $(this).parent().find('span').removeClass('none').html($(this).val());
-            // //$(this).parent().append($('<span />').html($(this).val()));
-            // $(this).remove();
+            
+            $(this).parent().find('span').removeClass('none').html($(this).val());
+            //$(this).parent().append($('<span />').html($(this).val()));
+            $(this).remove();
         }
     });
 
