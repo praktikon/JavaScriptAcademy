@@ -1,6 +1,7 @@
 <!doctype html>
 <html>
 <head>
+    <meta charset=utf-8>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<!--<script type="text/javascript" src="scripts/main.js"></script> -->
 	<link rel="stylesheet" type="text/css" href="styles/main.css">
@@ -8,7 +9,6 @@
 </head>
 <body>
 	<div class="container">
-
 		<div class="goods-list-container">
 			<div class="header">
 				<input id="goods-names-input" type="text" placeholder="enter here" />
@@ -18,12 +18,16 @@
 				<li><input type="checkbox"><span>lagedge</span></li>
 				<li><input type="checkbox"><span>water</span></li> -->
 			</ul>
+            <div class="delete-group">
+                <div class="check-all"><input type="checkbox">выбрать все записи</div>
+                <div class="delete-button"><input type="button" value="Удалить все"></div>
+            </div>   
 		</div>
 	</div>
 
 <script type="text/javascript">
 
-var ulItems = $('ul');
+var ulItems = $('ul.goods-list');
 
 $("#goods-names-input").keypress(function(e) {
 	var val = $(this).val();
@@ -32,8 +36,6 @@ $("#goods-names-input").keypress(function(e) {
     		ulItems.append('<li><input type="checkbox"><span>'+val+'</span><div class="cross"><img class="cross-img" src="cross.png"></img><div></li>');
         	$(this).val('');
         	$("input:checkbox", ulItems).on("change",function(){
-				// $(this).closest('li').find('span').toggleClass("black");
-				// console.log();
 				var input = $(this).next('span');
      			console.log($(this).prop('checked'));
      			if($(this).prop('checked')){
@@ -47,75 +49,62 @@ $("#goods-names-input").keypress(function(e) {
 });
 
 
-
-// listItems.on('change', function () {
-// 	console.log($(this));
-//      var input = $(this).next('span');
-//      console.log($(this).prop('checked'));
-//      if($(this).prop('checked')){
-//      	$(input).addClass("black");
-//      } else {
-//      	$(input).removeClass('black');
-//      };
-     
-//  });
-// listItems.prop('checked').on('change', function(){console.log('!!!!!!!!!')});
 $(function () {
-
-    $(document).on('click', 'span', function () {
-
+    $(document).on('dblclick', 'span', function () {
         var input = $('<input />', {
         	'class': 'temp',
             'type': 'text',
-           // 'name': 'unique',
             'value': $(this).html()
         });
+        $(this).parent().find('span').addClass('none');
         $(this).parent().append(input);
-        //$(this).remove();
-        $(this).addClass('none');
         input.focus();
-
     });
 
-    // $(document).on('keyup','input.temp', function(evt) {
-    //     evt.stopPropagation();
-    // 	if (evt.keyCode == 27) {
-    // 		$(this).parent().append($('<span />').html(text));
-    //    	    	$(this).remove();
-    // 	}
-    //     done = true;
-    //     text=null;
-    // });
+    $(document).on('keyup','input.temp', function(evt) {
+        if(evt.which == 27){
+            if ($(this).parent().find('span').hasClass('none')){
+                $(this).parent().find('span').removeClass('none');
+                if($(this)){
+                 $(this).remove();
+               }
+            }
+        }
+    });
 
     $(document).on('blur', 'input.temp', function () {
         if ($(this).parent().find('span').hasClass('none')){
-          //  $(this).parent().append($('<span />').html(text));
             $(this).parent().find('span').removeClass('none');
             if($(this)){
      	     $(this).remove();
     	   }
-
         }
     });
- 
-// It worked GOOD!
 
-    // $(document).on('blur', 'input.temp', function () {
-
-    //     $(this).parent().append($('<span />').html($(this).val()));
-    //     $(this).remove();
-    // });
 });
 
 $(document).on('keypress', 'input.temp', function (e) {
-   // $('input.temp').keypress( function(e) {
         if(e.which == 13) {
-            
             $(this).parent().find('span').removeClass('none').html($(this).val());
-            //$(this).parent().append($('<span />').html($(this).val()));
             $(this).remove();
         }
     });
+
+
+// $('input:checkbox', '.check-all').on('change', function(){
+//     var checkboxState = $(this).prop('checked');
+//     $('ul.goods-list').find(':checkbox').each(function(){
+//         var input = $(this).next('span');
+//         if (checkboxState){
+//            $(this).prop('checked', true);
+//            $(input).addClass("black");
+//        }else {
+//             $(this).prop('checked', false);
+//             $(input).removeClass("black");
+//        }
+//     });
+// });
+
 
 
 
