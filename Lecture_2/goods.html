@@ -1,1 +1,132 @@
+<!doctype html>
+<html>
+<head>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+	<!--<script type="text/javascript" src="scripts/main.js"></script> -->
+	<link rel="stylesheet" type="text/css" href="styles/main.css">
+	<title>Goods List</title>
+</head>
+<body>
+	<div class="container">
 
+		<div class="goods-list-container">
+			<div class="header">
+				<input id="goods-names-input" type="text" placeholder="enter here" />
+			</div>
+			<ul class="goods-list">
+				<!-- <li><input type="checkbox"><span>cabbage</span></li>
+				<li><input type="checkbox"><span>lagedge</span></li>
+				<li><input type="checkbox"><span>water</span></li> -->
+			</ul>
+		</div>
+	</div>
+
+<script type="text/javascript">
+
+var ulItems = $('ul');
+
+$("#goods-names-input").keypress(function(e) {
+	var val = $(this).val();
+	if(val!=''){
+    	if(e.which == 13) {
+    		ulItems.append('<li><input type="checkbox"><span>'+val+'</span><div class="cross"><img class="cross-img" src="cross.png"></img><div></li>');
+        	$(this).val('');
+        	$("input:checkbox", ulItems).on("change",function(){
+				// $(this).closest('li').find('span').toggleClass("black");
+				// console.log();
+				var input = $(this).next('span');
+     			console.log($(this).prop('checked'));
+     			if($(this).prop('checked')){
+     				$(input).addClass("black");
+     			} else {
+     				$(input).removeClass('black');
+     			};
+			});
+    	}
+	}
+});
+
+
+
+// listItems.on('change', function () {
+// 	console.log($(this));
+//      var input = $(this).next('span');
+//      console.log($(this).prop('checked'));
+//      if($(this).prop('checked')){
+//      	$(input).addClass("black");
+//      } else {
+//      	$(input).removeClass('black');
+//      };
+     
+//  });
+// listItems.prop('checked').on('change', function(){console.log('!!!!!!!!!')});
+$(function () {
+
+    $(document).on('click', 'span', function () {
+
+        var input = $('<input />', {
+        	'class': 'temp',
+            'type': 'text',
+           // 'name': 'unique',
+            'value': $(this).html()
+        });
+        $(this).parent().append(input);
+        //$(this).remove();
+        $(this).addClass('none');
+        input.focus();
+
+    });
+
+    // $(document).on('keyup','input.temp', function(evt) {
+    //     evt.stopPropagation();
+    // 	if (evt.keyCode == 27) {
+    // 		$(this).parent().append($('<span />').html(text));
+    //    	    	$(this).remove();
+    // 	}
+    //     done = true;
+    //     text=null;
+    // });
+
+    $(document).on('blur', 'input.temp', function () {
+        if ($(this).parent().find('span').hasClass('none')){
+          //  $(this).parent().append($('<span />').html(text));
+            $(this).parent().find('span').removeClass('none');
+            if($(this)){
+     	     $(this).remove();
+    	   }
+
+        }
+    });
+    
+
+
+
+// It worked GOOD!
+
+    // $(document).on('blur', 'input.temp', function () {
+
+    //     $(this).parent().append($('<span />').html($(this).val()));
+    //     $(this).remove();
+    // });
+});
+
+    $('input.temp').keypress( function(e) {
+        if(e.which == 13) {
+            console.log('33333333');
+            // $(this).parent().find('span').removeClass('none').html($(this).val());
+            // //$(this).parent().append($('<span />').html($(this).val()));
+            // $(this).remove();
+        }
+    });
+
+
+
+</script>
+<!--
+	<script type="text/javascript">
+	$(document).ready(
+	Application.init(document));
+	</script>
+-->
+</body>
+</html>
