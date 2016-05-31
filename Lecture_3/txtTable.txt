@@ -1,7 +1,11 @@
 Описание функции                            Метод запроса     Пример запроса
     
    
+<<<<<<< HEAD
 Получить список стран                         	GET           GET restapi/countries HTTP1.1
+=======
+Получить список стран                         	GET           GET restapi/countries/ HTTP1.1
+>>>>>>> a287c27e486abb484dd08b83939e4bf326dd7400
                                                               Host: my.site.com
                                                               User-agent: Internet-Explirer9.0
                                                               
