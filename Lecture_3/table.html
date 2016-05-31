@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+        <style>
+            .container {
+                        
+                display: block;
+                width: 750px;
+                margin: auto;
+                margin-top: 50px;
+                
+}
+            body{
+                background-color: #f1faff;
+            }
+            table {
+                
+                width: 100%;
+            }
+            table, td, th  {
+                border: 1px solid black;
+                border-collapse: collapse;
+            }
+            th, td {
+                vertical-align: middle;
+                padding: 5px;
+            }
+            th {
+                background-color: #d7f1ff;
+            }
+            tr:hover {
+                background-color: white;
+}
+            
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Описание функции</th>
+                        <th>Метод запроса</th>
+                        <th>Пример запроса</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Получить список стран</td>
+                        <td>GET</td>
+                        <td>GET restapi/countries HTTP1.1<br/>
+                            Host: my.site.com<br/>
+                            User-agent: Internet-Explirer9.0</td>
+                    </tr>
+                    <tr>
+                        <td>Получить список отелей в старне</td>
+                        <td>GET</td>
+                        <td>GET restapi/countries/{id}/hotels HTTP1.1<br/>
+                            Host: my.site.com<br/>
+                            User-agent: Internet-Explirer9.0</td>
+                    </tr>
+                    <tr>
+                        <td>Добавить страну</td>
+                        <td>POST</td>
+                        <td>POST restapi/countries HTTP1.1<br/>
+                            Host: my.site.com<br/>
+                            Content-Type: XXX/XXX<br/>
+                            Content-Length: XXX<br/>
+                            User-agent: Internet-Explirer9.0</td>
+                    </tr>
+                    <tr>
+                        <td>Добавить отель в страну</td>
+                        <td>POST</td>
+                        <td>POST restapi/countries/{id}/hotels HTTP1.1<br/>
+                            Host: my.site.com<br/>
+                            Content-Type: XXX/XXX<br/>
+                            Content-Length: XXX<br/>
+                            User-agent: Internet-Explirer9.0</td>
+                    </tr>
+                     <tr>
+                        <td>Удалить определенный отель</td>
+                       <td>DELETE</td>
+                        <td>DELETE restapi/countries/{id}/hotels/{id} HTTP1.1<br/>
+                            Host: my.site.com<br/>
+                            User-agent: Internet-Explirer9.0</td>
+                    </tr>
+                     <tr>
+                        <td>Получить информацию об определенном отеле</td>
+                         <td>GET</td>
+                        <td>GET restapi/countries/{id}/hotels/{id} HTTP1.1<br/>
+                            Host: my.site.com<br/>
+                            User-agent: Internet-Explirer9.0</td>
+                    </tr>
+                     <tr>
+                        <td>Обновить информацию об определенном отеле</td>
+                         <td>PUT</td>
+                        <td> PUT restapi/countries/{id}/hotels/{id} HTTP1.1<br/>
+                            Host: my.site.com<br/>
+                            Content-Type: XXX/XXX<br/>
+                            Content-Length: XXX<br/>
+                            User-agent: Internet-Explirer9.0</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </body>
+</html>
