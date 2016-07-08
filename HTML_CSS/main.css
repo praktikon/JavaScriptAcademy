@@ -1,0 +1,157 @@
+body {
+	background-color: black;
+	min-height: 100%;
+}
+
+header {
+	color: white;
+	background-color: #500303;  
+	height: 130px;
+}
+
+.logo img {
+	height: 130px;
+	width: 130px;
+}
+
+header div {
+	display: inline-block;
+	vertical-align: middle;
+}
+
+.header-text {
+	padding-left: 50px;
+	font-size: 23px;
+	letter-spacing: 8px;
+}
+
+.content {
+	height: 100%;
+	position: relative;
+}
+aside {
+	background-color: #665F5F;
+	width: 200px;
+	font-size: 20px;
+	color: white;
+	height: 100%;
+	position: absolute;
+	float: left;
+}
+
+aside nav ul {
+	margin-top: 0px;
+	margin-bottom: 0px;
+	list-style: none;
+	padding-left: 0px;
+}
+
+.wrapper {
+	padding-left: 200px;
+}
+
+.part1 {
+	min-height: 250px;
+	background-color: gray;
+	border: 1px solid white;
+}
+	.container {
+		margin-top: 20px;
+		display: flex;
+		display: -webkit-flex;
+		-webkit-justify-content: center;
+        justify-content: center;
+        flex-wrap: wrap; 
+		width: 100%;
+	}
+	    .item {
+	    	margin: 0px 20px 20px 20px;
+	    	
+	    }
+	    .item-content {
+	    	
+	    	width: 100px;
+	    	min-height: 100px;
+	    	background-color: #69698e;
+	    	display:flex;
+            flex-direction:column;
+            justify-content: center;
+            text-align: center
+            
+	    }
+	    .rib {
+	    	position: relative;
+	    	overflow: hidden;
+	    }
+
+	    
+	    .rib:after {
+    		position: absolute;
+    		top: 8px;
+    		width: 60%;
+    		height: 10px;
+    		content: " ";
+    		display: block;
+    		transform: rotate(-45deg);
+    		-webkit-transform: rotate(-45deg);
+    		left: -19px;
+    		background-color: #ff0b0b;
+    		
+		}
+
+
+
+.part2 {
+	background-color: gray;
+	min-height: 150px;
+	text-align: center;
+}
+
+	.item2 {
+		display: inline-table;
+    	border: solid 1px black;
+    	background-color: #312d2e;
+    	margin: 10px;
+    	padding: 5px;
+    	width: 25%;
+    	height: 100px;
+    	text-align: left;
+    	color: wheat;
+	}
+		.item2-con {
+			display: table-cell;
+    		vertical-align: middle;
+		}
+
+.upper {
+	height: 50px;
+	padding: 0px;
+	background-color: #665F6F;
+	text-align: center;
+	line-height: 50px;
+}
+
+.upper div.one {
+	width: 33%;
+	float: left;
+}
+
+.upper div.two {
+	width: 34%;
+	float: left;
+	background-color: #775F6F;
+}
+
+
+.upper div.three {
+	width: 33%
+	float: left;
+}
+
+
+.bottom {
+	height: 50px;
+	background-color: #665F5F;
+	text-align: center;
+	line-height: 50px;
+}
