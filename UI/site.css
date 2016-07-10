@@ -12,8 +12,8 @@ header {
 .show-menu {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
-    color: #fff;
-    background: #19c589;
+    color: red;
+    background: #b7c68b;
     text-align: center;
     padding: 10px 0;
     display: none;
@@ -182,6 +182,17 @@ footer {
 @media only screen and (max-width: 1024px),
 	screen and (max-device-width: 1024px)
 {
+	aside {
+		display: none;
+
+	}
+	article {
+		margin-bottom: 20px;
+	}
+	article .wrapper {
+		margin: auto;
+		width: 850px;
+	}
 
 
 }
@@ -189,11 +200,27 @@ footer {
 @media only screen  and (max-width : 720px),
 	screen and (max-device-width : 720px)
 {
+
+	.main-content{
+		margin-top: 10px;
+	}
 	article .wrapper {
 		margin: auto;
-		width: 400px;
-		background-color: red;
+		width: 800px;
+		
 	}
+	.search input {
+		height: 20px;
+		font-size: 1em
+	}
+
+	.search .fa-search { 
+	 	
+	 	top: 5px;
+	 	left: 7px;
+	 	font-size: 15px;
+	}
+
 	aside {
 		display: none;
 
@@ -204,9 +231,7 @@ footer {
 	header {
 		height: auto;
 	}
-	.search {
-		display:none;
-	}
+
 }
 
 
@@ -217,22 +242,31 @@ footer {
 
  	.show-menu {
 	    display:block;
+	    font-size: 3em;
 	}
 
 	#menu {
-		background-color: blue;
+		background-color: #b7c68b;
+		font-size: 5em;
 	}
 
 	#menu li {
 		position: static;
 		display: block;
-		
+		border-bottom: 1px solid black;
 	}
+
   	article .wrapper {
 		margin: auto;
-		width: 400px;
-		background-color: green;
-		z-index: -1;
+		width: 95%;
+	}
+
+	.avatar img{
+		display: none;
+	}
+	.avatar {
+		font-size: 0.9em;
+		line-height: 20px;
 	}
 
 	header {
@@ -266,8 +300,5 @@ footer {
     .search {
 		display:none;
 	}
-
-
-
 
 }
