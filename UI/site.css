@@ -9,6 +9,8 @@ header {
 	height: 200px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
 }
+
+
 .show-menu {
     font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
     text-decoration: none;
@@ -78,6 +80,7 @@ display: none;
 
 
 body {
+	font-family: 'Libre Baskerville', serif;
 
    	background-color: #DED29E;
 	color: gray;
@@ -109,19 +112,26 @@ article .wrapper {
 
 .avatar {
 	background-color: #B7C68B;
-	display: -webkit-flex; /* Safari */
+	display: -webkit-flex; 
     display: flex;
     margin-bottom: 15px
 }
 
 
 .avatar img {
-	/*border: 2px solid white;
-	border-radius: 8px;*/
+	
 	width: 100px;
 	height: 100px;
-	/*margin: 5px;*/
+	
 
+}
+
+.avatar img:hover {
+	 -webkit-transform: scale(2);
+     -ms-transform: scale(2);
+     transform: scale(2);
+     -webkit-transition: all 1s; 
+     transition: all 1s;
 }
 
 .header-text {
@@ -132,14 +142,22 @@ article .wrapper {
  .post-image {
  	margin: 0px;
  	padding: 0px;
- 	/*background-color: black;*/
+ 	
  	text-align: center;
  }
 
 .post-image img {
-
 	max-width: 100%;
 }
+
+.post-image img:hover {
+	-webkit-transform: scale(1.5);
+     -ms-transform: scale(1.5);
+     transform: scale(1.5);
+     -webkit-transition: all 1s;
+     transition: all 1s;
+}
+
 
 .post-text {
 	color: black;
@@ -158,6 +176,13 @@ aside {
 	position: absolute;
 	border-radius: 12px;
 	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+	-webkit-animation-name: color; 
+    -webkit-animation-duration: 2s; 
+    animation-name: color;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+
+
 }
 aside hr {
 	background-color: gray;
@@ -171,8 +196,9 @@ aside hr {
 .aside-content a {
 	color: black;
 	text-decoration: none;
-	
 }
+
+
 
 footer {
 	text-align: center;
@@ -231,7 +257,6 @@ footer {
 	header {
 		height: auto;
 	}
-
 }
 
 
@@ -302,3 +327,16 @@ footer {
 	}
 
 }
+
+
+@-webkit-keyframes color {
+    from {background-color: #fbea74;}
+    to {background-color: #fbbc74;}
+}
+
+
+@keyframes color {
+    from {background-color: #fbea74;}
+    to {background-color: #fbbc74;}
+}
+
