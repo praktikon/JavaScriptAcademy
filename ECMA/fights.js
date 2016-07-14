@@ -47,3 +47,26 @@ var fight = (fighter, improvedFighter, ...point) => {
 
 fight(Kolya, Andron, 25, 13, 45, 105, 17, 6, 34);
 
+/*   
+var fight = (fighter, improvedFighter, ...point) => {
+	let frs = [fighter, improvedFighter];
+	for (let i = 0; i < point.length; i++) { 
+		console.log(`${frs[0].name} hits ${frs[1].name}`);
+		
+		if(frs[0].constructor.name == 'improvedFighter'){
+			frs[0].doubleHit(frs[1], point[i]);
+		} else {
+			frs[0].hit(frs[1], point[i]);
+		}
+    	
+    	if(frs[1].health ==0 ){
+    		console.log(`${frs[0].name} won!`);
+    		break;
+    	} else {
+    		console.log(`${frs[0].name}'s health is ${frs[0].health}, ${frs[1].name}'s health ${frs[1].health}`);
+    	frs.reverse();
+    	}
+	}
+}
+
+*/
