@@ -1,0 +1,36 @@
+1. Написать запрос для поиска всех студентов, у которых score > 87% и < 93% по любому из типов выполненных заданий.
+
+1.1  db.people.find( {scores: {$elemMatch: { score:{$gt: 87, $lt: 93 }}}}) 
+
+1.2 db.people.find( {
+     $where: function(){ 
+                for (var i=0; i<this.scores.length; i++){ 
+                   if(this.scores[i].score>87 && this.scores[i].score<93) 
+                      return true
+                }
+                return false 
+             }
+})
+
+2. Написать запрос-агрегацию для выборки всех студентов, у которых результат по экзамену (type: "exam") более 90% (использование unwind)
+
+2.1 db.students.aggregate([{$unwind: "$scores"}, {$match: {"scores.type": "exam", "scores.score": {$gt: 90}}}])
+
+2.2 слегка приукрашенный
+
+ db.people.aggregate([
+  {$unwind: "$scores"}, 
+  {$match: {"scores.type": "exam", "scores.score": {$gt: 90}}}, 
+  {$project: {
+     "Student's name": "$name",
+ 	 "Exam score": "$scores.score"
+  }},
+  {$sort: {
+      "Exam score": -1
+  }}
+ ])
+
+3. Студентам с именем Dusti Lemmond добавить поле “accepted” со значением true.
+
+db.people.update( {"name": "Dusti Lemmond"}, {$set: {"accepted": "true"}}, {multi: true})
+db.people.updateMany( {"name": "Dusti Lemmond"}, {$set: {"accepted": "true"}})
