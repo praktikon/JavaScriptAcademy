@@ -32,5 +32,5 @@
 
 3. Студентам с именем Dusti Lemmond добавить поле “accepted” со значением true.
 
-db.people.update( {"name": "Dusti Lemmond"}, {$set: {"accepted": "true"}}, {multi: true})
-db.people.updateMany( {"name": "Dusti Lemmond"}, {$set: {"accepted": "true"}})
+3.1  db.people.update( {"name": "Dusti Lemmond"}, {$set: {"accepted": "true"}}, {multi: true})
+3.2  db.people.updateMany( {"name": "Dusti Lemmond"}, {$set: {"accepted": "true"}})
