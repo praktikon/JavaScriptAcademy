@@ -24,15 +24,15 @@
                                                               User-agent: Internet-Explirer9.0
                                                               Body
                                                               
-Удалить определенный отель              	    DELETE          DELETE restapi/countries/{id}/hotels/{id} HTTP1.1
+Удалить определенный отель              	    DELETE          DELETE restapi/hotels/{id} HTTP1.1
                                                               Host: my.site.com
                                                               User-agent: Internet-Explirer9.0
                                                               
-Получить информацию об определенном отеле       GET           GET restapi/countries/{id}/hotels/{id} HTTP1.1
+Получить информацию об определенном отеле       GET           GET restapi/hotels/{id} HTTP1.1
                                                               Host: my.site.com
                                                               User-agent: Internet-Explirer9.0
                                                               
-Обновить информацию об определенном отеле       PUT           PUT restapi/countries/{id}/hotels/{id} HTTP1.1
+Обновить информацию об определенном отеле       PUT           PUT restapi/hotels/{id} HTTP1.1
                                                               Host: my.site.com
                                                               Content-Type: XXX/XXX
                                                               Content-Length: XXX

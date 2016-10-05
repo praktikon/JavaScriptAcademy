@@ -27,6 +27,7 @@ var Animal = {
 	}
 };
 
+// Dog
 var Dog = Object.create(Animal);
 Dog.constructor = function(age, name, region) {
     Animal.constructor.call(this, age, name, 'woof', region);
@@ -36,6 +37,7 @@ Dog.goAway = function() {
     console.log('Go away! ' + this.sound);
 };
 
+// Cat
 var Cat = Object.create(Animal);
 Cat.constructor = function(age, name, region) {
     Animal.constructor.call(this, age, name, 'meaw', region);
@@ -45,6 +47,7 @@ Cat.goAway = function() {
 	console.log('Go away! ' + this.sound);
 };
 
+// Woodpecker
 var Woodpecker = Object.create(Animal);
 Woodpecker.constructor = function(age, name, region) {
     Animal.constructor.call(this, age, name, 'tuk', region);

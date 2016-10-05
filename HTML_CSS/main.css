@@ -29,6 +29,7 @@ header div {
 	height: 100%;
 	position: relative;
 }
+
 aside {
 	background-color: #665F5F;
 	width: 200px;
@@ -66,10 +67,8 @@ aside nav ul {
 	}
 	    .item {
 	    	margin: 0px 20px 20px 20px;
-	    	
 	    }
 	    .item-content {
-	    	
 	    	width: 100px;
 	    	min-height: 100px;
 	    	background-color: #69698e;
@@ -83,8 +82,6 @@ aside nav ul {
 	    	position: relative;
 	    	overflow: hidden;
 	    }
-
-	    
 	    .rib:after {
     		position: absolute;
     		top: 8px;
@@ -98,30 +95,34 @@ aside nav ul {
     		background-color: #ff0b0b;
     		
 		}
-
-
-
 .part2 {
 	background-color: gray;
 	min-height: 150px;
 	text-align: center;
+	position: relative;
 }
-
-	.item2 {
-		display: inline-table;
-    	border: solid 1px black;
-    	background-color: #312d2e;
-    	margin: 10px;
-    	padding: 5px;
-    	width: 25%;
-    	height: 100px;
-    	text-align: left;
-    	color: wheat;
+	.item2-wrapper {
+		position: absolute;
+		top: 50%;
+		height: 100px;
+		width: 100%;
+		margin-top: -50px;
 	}
-		.item2-con {
-			display: table-cell;
-    		vertical-align: middle;
+		.item2 {
+			display: inline-table;
+			border: solid 1px black;
+			background-color: #312d2e;
+			margin-right: 10px;
+			width: 25%;
+			height: 100px;
+			text-align: left;
+			color: wheat;
 		}
+			.item2-con {
+				display: table-cell;
+				vertical-align: middle;
+				padding: 10px;
+			}
 
 .upper {
 	height: 50px;
@@ -142,12 +143,10 @@ aside nav ul {
 	background-color: #775F6F;
 }
 
-
 .upper div.three {
-	width: 33%
+	width: 33%;
 	float: left;
 }
-
 
 .bottom {
 	height: 50px;
