@@ -11,9 +11,7 @@ class Fighter {
 		} else {
 			this.health = 0;
 		}
-		
 	}
-
 	hit(enemy, point){
 		let damage = point*this.power;
 		enemy.setDamage(damage);
@@ -35,7 +33,7 @@ var fight = (fighter, improvedFighter, ...point) => {
 	for (let i = 0; i < point.length; i++) { 
 		console.log(`${frs[0].name} hits ${frs[1].name}`);
     	frs[0].hit(frs[1], point[i]);
-    	if(frs[1].health ==0 ){
+    	if(frs[1].health ==0 ) {
     		console.log(`${frs[0].name} has won!`);
     		break;
     	} else {

@@ -52,12 +52,10 @@ Woodpecker.prototype.goAway = function() {
 	console.log('go away! ' + this.sound);
 }
 
-
 anml = new Animal(5, 'anny', 'moo', 'region0');
 tusik = new Dog(2, 'tuz', 'region1');
 kitty = new Cat(3, 'matroSkin','region2');
 woody = new Woodpecker(4, 'dyatel', 'region3');
-
 
 function getTypep(ob) {
 	if (Object.getPrototypeOf(ob).hasOwnProperty('goAway')) {
@@ -88,8 +86,6 @@ function getTypepThis(){
 		return 'Not our type!';
 	}
 }
-
-
 
 anml.say();
 tusik.say();

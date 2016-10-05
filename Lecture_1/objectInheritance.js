@@ -92,7 +92,6 @@ function getTypepThis(){
 	}
 }
 
-
 anml.say();
 tusik.say();
 kitty.say();
